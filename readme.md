@@ -1,4 +1,4 @@
-### glob-expand
+# glob-expand
 
 A (sync) glob / minimatch call using [gruntjs](https://github.com/gruntjs/grunt)'s `file.expand`.
 
@@ -6,8 +6,12 @@ It has only a minimum of dependencies (glob & lodash).
 
 Its actually a copy/paste of just 2 functions from Gruntjs's v0.4.1 [grunt/file.js](https://github.com/gruntjs/grunt/blob/master/lib/grunt/file.js)
 
-# Examples:
 
+## Install:
+
+`npm install glob-expand`
+
+## Examples:
 ```coffeescript
 	expand = require 'glob-expand'
 
