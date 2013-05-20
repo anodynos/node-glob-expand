@@ -1,0 +1,48 @@
+{
+ "name": "glob-expand",
+ "description": "A sync glob / minimatch call with a gruntjs -like `expand` of patterns, with minimum depepndencies. Derived from gruntjs's v0.4.1 `file.expand`",
+ "version": "0.0.1",
+ "homepage": "https://github.com/anodynos/node-glob-expand",
+ "author": {
+  "name": "Agelos Pikoulas",
+  "email": "agelos.pikoulas@gmail.com"
+ },
+ "licenses": [
+  {
+   "type": "MIT",
+   "url": "http://www.opensource.org/licenses/mit-license.php"
+  }
+ ],
+ "keywords": [
+   "minimatch", "glob", "node-glob",
+   "gruntjs", "grunt", "expand",
+   "filematch", "wildcards", "patterns"
+ ],
+ "repository": {
+  "type": "git",
+  "url": "git://github.com/anodynos/node-glob-expand"
+ },
+ "bugs": {
+  "url": ""
+ },
+ "main": "./build/code/expand.js",
+ "test": "mocha build/spec --recursive --bail --reporter spec",
+ "directories": {
+  "doc": "./doc",
+  "dist": "./build"
+ },
+ "engines": {
+  "node": "*"
+ },
+ "dependencies": {
+   "glob": "~3.1.21",
+   "lodash": "1.2.x"
+ },
+ "devDependencies": {
+  "chai": "*",
+  "grunt": "0.4.1",
+  "grunt-contrib-concat": "0.3.0",
+  "grunt-contrib-copy": "0.4.1",
+  "grunt-shell": "0.2.2"
+ }
+}

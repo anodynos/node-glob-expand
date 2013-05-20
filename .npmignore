@@ -1,0 +1,7 @@
+/.idea/
+/node_modules/
+/source/
+/grunt*
+/build/spec/
+/.npmignore
+/*.bat
