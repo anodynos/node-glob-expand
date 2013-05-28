@@ -45,15 +45,6 @@ gruntFunction = (grunt) ->
         stdout: true
         stderr: true
 
-    copy:
-      specResources:
-        files: [
-          expand: true
-          cwd: "#{sourceSpecDir}/"
-          src: ["*.json"]
-          dest: "#{buildSpecDir}/"
-        ]
-
     concat:
       VERSIONindex:
         options: banner: "<%= meta.banner %><%= meta.varVERSION %>"
@@ -72,9 +63,9 @@ gruntFunction = (grunt) ->
   grunt.registerTask cmd, splitTasks "shell:#{cmd}" for cmd of gruntConfig.shell # shortcut to all "shell:cmd"
 
   grunt.registerTask shortCut, splitTasks tasks for shortCut, tasks of {
-     "default": "clean build test"
+     "default": "clean build"
      "build":   "shell:coffee concat"
-     "test":    "shell:coffeeSpec copy:specResources mocha"
+     "test":    "mocha"
 
      # some shortcuts
      "cf":      "shell:coffee"
@@ -95,6 +86,7 @@ gruntFunction = (grunt) ->
   }
 
   grunt.initConfig gruntConfig
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-shell'
 

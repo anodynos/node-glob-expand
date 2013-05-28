@@ -1,11 +1,13 @@
 # glob-expand
 
-A (sync) glob / minimatch call using [gruntjs](https://github.com/gruntjs/grunt)'s `file.expand`.
+A (sync) glob / minimatch / RegExp call using [gruntjs](https://github.com/gruntjs/grunt)'s `file.expand`.
 
 It has only a minimum of dependencies (glob & lodash).
 
-Its actually a copy/paste of just 2 functions from Gruntjs's v0.4.1 [grunt/file.js](https://github.com/gruntjs/grunt/blob/master/lib/grunt/file.js)
+Its almost a copy/paste of 2 functions from Gruntjs's v0.4.1 [grunt/file.js](https://github.com/gruntjs/grunt/blob/master/lib/grunt/file.js)
 
+Additionally you can use [minimatch](http://github.com/isaacs/minimatch/) `String`s or `RegExp`s, either as an Array or as arguments.
+*
 
 ## Install:
 
@@ -31,6 +33,12 @@ Its actually a copy/paste of just 2 functions from Gruntjs's v0.4.1 [grunt/file.
 	expand {}, '**/*.*', '!**/*.js'
 	expand ['**/*.*', '!**/*.js']
 	expand '**/*.*', '!**/*.js'
+
+	# Using Regular Expressions:
+	expand '**/*.js', /.*\.(coffee\.md|litcoffee|coffee)$/i, '!DRAFT*.*'
+	# -> returns all `.js`, `.coffee`, `.coffee.md` & `.litcoffee` files,
+	#    excluding those starting with 'DRAFT'
+
 ```
 
 See [gruntjs files configuration](http://gruntjs.com/configuring-tasks#files)

@@ -1,7 +1,7 @@
 {
  "name": "glob-expand",
- "description": "A sync glob / minimatch call with a gruntjs -like `expand` of patterns, with minimum depepndencies. Derived from gruntjs's v0.4.1 `file.expand`",
- "version": "0.0.1",
+ "description": "A sync glob / minimatch / RegExp call with a gruntjs -like `expand` of patterns, with minimum depepndencies. Derived from gruntjs's v0.4.1 `file.expand`",
+ "version": "0.0.2",
  "homepage": "https://github.com/anodynos/node-glob-expand",
  "author": {
   "name": "Agelos Pikoulas",
@@ -42,7 +42,7 @@
   "chai": "*",
   "grunt": "0.4.1",
   "grunt-contrib-concat": "0.3.0",
-  "grunt-contrib-copy": "0.4.1",
+  "grunt-contrib-clean": "0.4.1",
   "grunt-shell": "0.2.2"
  }
 }
