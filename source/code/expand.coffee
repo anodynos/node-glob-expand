@@ -7,7 +7,7 @@ path = require 'path'
 expand = (args...)->
   # If the first argument is an options object, save those options to pass
   # into the file.glob.sync method.
-  options = if _.isObject(args[0]) then args.shift() else {}
+  options = if _.isPlainObject(args[0]) then args.shift() else {}
 
   # Use the first argument if it's an Array, otherwise convert the arguments
   # object to an array and use that.
