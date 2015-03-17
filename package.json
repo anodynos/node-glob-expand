@@ -1,7 +1,7 @@
 {
  "name": "glob-expand",
  "description": "A sync glob / minimatch / RegExp call with a gruntjs -like `expand` of patterns, with minimum depepndencies. Derived from gruntjs's v0.4.1 `file.expand`",
- "version": "0.0.2",
+ "version": "0.1.0",
  "homepage": "https://github.com/anodynos/node-glob-expand",
  "author": {
   "name": "Agelos Pikoulas",
@@ -35,7 +35,7 @@
   "node": "*"
  },
  "dependencies": {
-   "glob": "~3.1.21",
+   "glob": "~4.4.2",
    "lodash": "1.2.x"
  },
  "devDependencies": {
