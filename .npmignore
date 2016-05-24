@@ -4,4 +4,4 @@
 /grunt*
 /build/spec/
 /.npmignore
-/*.bat
+Gruntfile.coffee

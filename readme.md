@@ -2,7 +2,7 @@
 
 A (sync) glob / minimatch / RegExp call using [gruntjs](https://github.com/gruntjs/grunt)'s `file.expand`.
 
-It has only a minimum of dependencies (glob & lodash).
+It has only a minimum of dependencies: `glob` (version 4.x that has negation patterns) & `lodash`.
 
 Its almost a copy/paste of 2 functions from Gruntjs's v0.4.1 [grunt/file.js](https://github.com/gruntjs/grunt/blob/master/lib/grunt/file.js)
 

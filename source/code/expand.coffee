@@ -4,7 +4,7 @@ fs = require 'fs'
 path = require 'path'
 
 # Return an array of all file paths that match the given wildcard patterns.
-expand = (args...)->
+expand = (args...) ->
   # If the first argument is an options object, save those options to pass
   # into the file.glob.sync method.
   options = if _.isPlainObject(args[0]) then args.shift() else {}
@@ -17,21 +17,20 @@ expand = (args...)->
   return []  if patterns.length is 0
 
   # Return all matching filepaths.
-  matches = processPatterns(patterns, (pattern) ->
+  matches = processPatterns patterns, (pattern) ->
     # Find all matching files for this pattern.
     if _.isString pattern
       glob.sync pattern, options
     else
       if _.isRegExp pattern
-        _.filter (glob.sync '**/*.*', options), (filename)->
+        _.filter (glob.sync '**/*.*', options), (filename) ->
           filename.match pattern
       else
         []
-  )
 
   # Filter result set?
   if options.filter
-    matches = matches.filter((filepath) ->
+    matches = matches.filter (filepath) ->
       filepath = path.join(options.cwd or "", filepath)
       try
         if _.isFunction options.filter
@@ -43,9 +42,8 @@ expand = (args...)->
 
         # Otherwise, it's probably not the right type.
         return false
-    )
-  matches
 
+  matches
 
 # Process specified wildcard glob patterns or filenames against a
 # callback, excluding and uniquing files in the result set.
@@ -81,9 +79,11 @@ _.extend expand, {
   VERSION: if VERSION? then VERSION else '{NO_VERSION}'
 }
 
-#console.log expand {cwd: '../..'}, ['**/*.js', /\.coffee$/, '!node_modules/**/*.*', /\.md$/ ]
+# Examples
+#console.log expand {cwd: '../..'}, ['**/*.js', /\.coffee$/, '!node_modules/**/*.*']#, /\.md$/ ]
 #console.log expand {cwd: '../..'}, '**/*.*', '!node_modules/**/*.*'
 
 #console.log expand {}, ['**/*.*', '!**/*.js']
 #console.log expand {}, '**/*.*', '!**/*.js'
 #console.log expand {cwd:'../..'}, [/\.coffee$/] #'**/*.*' #, '!**/*.js'
+#console.log expand '**/*.js', /.*\.(coffee\.md|litcoffee|coffee)$/i, '!DRAFT*.*'
