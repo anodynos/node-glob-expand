@@ -1,3 +1,5 @@
+0.2.1 - Add LICENSE file
+
 0.2.0 - Upgrade to lodash@4 & glob@4.5
 
 0.1.0 - Using glob 4.x instead of 3.x

@@ -1,7 +1,9 @@
 /.idea/
+/.git/
 /node_modules/
 /source/
 /grunt*
 /build/spec/
 /.npmignore
-Gruntfile.coffee
+/.gitignore
+/Gruntfile.coffee
